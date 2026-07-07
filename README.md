@@ -52,10 +52,6 @@ graph TD
 - **Frontend:** Next.js 14, TypeScript, Tailwind CSS, Framer Motion
 ```
 
-Make sure there's exactly one blank line between the closing backticks and `**Tech Stack:**`. This ensures the Mermaid parser stops and the following text is regular Markdown.
-
-Commit the change, and the diagram will render perfectly on GitHub.
-
 ---
 
 ## Project Structure
@@ -81,10 +77,10 @@ signal-workspace/
 ## Screenshots
 
 ### Main Interface
-![Broadcast Input](screenshots/ui.png)
+![Broadcast Input](interface/ui.png)
 
 ### Timeline / Transmission Log
-![Timeline](screenshots/timeline.png)
+![Timeline](screenshots/recent_entries.png)
 
 ### Agent Test (Recovery)
 ![Terminal Test](screenshots/test-terminal.png)

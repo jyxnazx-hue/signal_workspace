@@ -1,4 +1,5 @@
-# signal_workspace
+
+```markdown
 # 📡 Signal – Your External Continuity System
 
 **Capstone project for Google’s Intensive Vibe Coding course on Kaggle.**
@@ -26,7 +27,7 @@ Signal acts as an **external continuity system**:
 
 ```mermaid
 graph TD
-    App/Interface -->|Text / Voice| ROUTER[Deterministic Router]
+    UI[Next.js Dark-Mode UI] -->|Text / Voice| ROUTER[Deterministic Router]
     ROUTER --> SAFETY[Safety Agent]
     ROUTER --> CATEGORY[Categorization Agent]
     ROUTER --> THREAD[Threading Agent]
@@ -42,3 +43,88 @@ graph TD
     RECOVER --> SNAPSHOTS
     REFLECT --> VECTOR
     REFLECT --> GRAPH
+```
+
+**Tech Stack:**
+- **Agent Framework:** Google ADK (Agent Development Kit)
+- **Models:** gemma-4-31b-it (via ADK)
+- **Memory:** ChromaDB (vector search) + NetworkX (knowledge graph) exposed as MCP tools
+- **Backend:** Python, FastAPI (API endpoints ready for wiring)
+- **Frontend:** Next.js 14, TypeScript, Tailwind CSS, Framer Motion
+
+---
+
+## Project Structure
+
+```
+signal-workspace/
+├── agent/                  # Python agent backend
+│   ├── agents/             # Safety, Categorization, Threading, Recovery, Reflection
+│   ├── orchestrator/       # Deterministic router
+│   ├── memory/             # MCP server (ChromaDB, graph store, tools)
+│   ├── models/             # Pydantic models (Entry, Snapshot)
+│   ├── tests/              # Individual agent tests
+│   └── initialize.py       # Memory system setup
+├── web/                    # Next.js frontend
+│   └── src/
+│       ├── components/     # BroadcastInput, Timeline, RecoveryCard, JoyDose
+│       └── lib/            # API client
+└── docs/                   # Architecture diagram
+```
+
+---
+
+## Screenshots
+
+### Main Interface
+![Broadcast Input](screenshots/ui.png)
+
+### Timeline / Transmission Log
+![Timeline](screenshots/timeline.png)
+
+### Agent Test (Recovery)
+![Terminal Test](screenshots/test-terminal.png)
+
+---
+
+## Getting Started
+
+### Backend
+```bash
+python -m agent.initialize
+python -m agent.tests.test_recovery   # example test
+adk web                               # interactive debug UI
+```
+
+### Frontend
+```bash
+cd web
+npm install
+npm run dev
+```
+
+---
+
+## Key Agent Tests
+
+```bash
+python -m agent.tests.test_capture
+python -m agent.tests.test_safety
+python -m agent.tests.test_categorization
+python -m agent.tests.test_threading
+python -m agent.tests.test_recovery
+python -m agent.tests.test_reflection
+```
+
+---
+
+## Capstone Submission
+
+- **Track:** Freestyle
+- **Kaggle:** [Link to competition](https://www.kaggle.com/competitions/vibecoding-agents-capstone-project)
+- **Portfolio Write-up:** Included in Kaggle submission form
+---
+
+## Status
+
+All specialist agents are individually tested and functional. The deterministic root router is implemented; final end‑to‑end integration with the frontend is in progress. The frontend UI is complete and ready for API connection.

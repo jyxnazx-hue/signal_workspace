@@ -24,9 +24,14 @@ Signal acts as an **external continuity system**:
 
 ## Architecture
 
+The Mermaid diagram is failing because the code block isn't properly closed, and the "Tech Stack" text is bleeding into the diagram. To fix it, make sure there's a line with three backticks ```` ``` ```` **immediately after the last diagram line** and that there is a blank line before the next heading.
+
+Here's the corrected section of your `README.md` — replace the entire Mermaid block and the following text with this exact format:
+
+```markdown
 ```mermaid
 graph TD
-    App Interface -->|Text / Voice| ROUTER[Deterministic Router]
+    UI[Next.js Dark-Mode UI] -->|Text / Voice| ROUTER[Deterministic Router]
     ROUTER --> SAFETY[Safety Agent]
     ROUTER --> CATEGORY[Categorization Agent]
     ROUTER --> THREAD[Threading Agent]
@@ -42,6 +47,7 @@ graph TD
     RECOVER --> SNAPSHOTS
     REFLECT --> VECTOR
     REFLECT --> GRAPH
+```
 
 **Tech Stack:**
 - **Agent Framework:** Google ADK (Agent Development Kit)
@@ -49,6 +55,11 @@ graph TD
 - **Memory:** ChromaDB (vector search) + NetworkX (knowledge graph) exposed as MCP tools
 - **Backend:** Python, FastAPI (API endpoints ready for wiring)
 - **Frontend:** Next.js 14, TypeScript, Tailwind CSS, Framer Motion
+```
+
+Make sure there's exactly one blank line between the closing backticks and `**Tech Stack:**`. This ensures the Mermaid parser stops and the following text is regular Markdown.
+
+Commit the change, and the diagram will render perfectly on GitHub.
 
 ---
 

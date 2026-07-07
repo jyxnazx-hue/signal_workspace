@@ -26,7 +26,7 @@ Signal acts as an **external continuity system**:
 
 ```mermaid
 graph TD
-    UI[Next.js Dark-Mode UI] -->|Text / Voice| ROUTER[Deterministic Router]
+    App Interface -->|Text / Voice| ROUTER[Deterministic Router]
     ROUTER --> SAFETY[Safety Agent]
     ROUTER --> CATEGORY[Categorization Agent]
     ROUTER --> THREAD[Threading Agent]

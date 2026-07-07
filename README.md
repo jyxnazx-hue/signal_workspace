@@ -26,7 +26,7 @@ Signal acts as an **external continuity system**:
 
 ```mermaid
 graph TD
-    Interface -->|Text / Voice| ROUTER[Deterministic Router]
+    UI[Next.js Dark-Mode UI] -->|Text / Voice| ROUTER[Deterministic Router]
     ROUTER --> SAFETY[Safety Agent]
     ROUTER --> CATEGORY[Categorization Agent]
     ROUTER --> THREAD[Threading Agent]
@@ -42,10 +42,11 @@ graph TD
     RECOVER --> SNAPSHOTS
     REFLECT --> VECTOR
     REFLECT --> GRAPH
+```
 
 **Tech Stack:**
 - **Agent Framework:** Google ADK (Agent Development Kit)
-- **Models:** gemma-4-31b-it (via ADK)
+- **Models:** Gemini 2.5 Pro (via ADK)
 - **Memory:** ChromaDB (vector search) + NetworkX (knowledge graph) exposed as MCP tools
 - **Backend:** Python, FastAPI (API endpoints ready for wiring)
 - **Frontend:** Next.js 14, TypeScript, Tailwind CSS, Framer Motion
@@ -121,6 +122,7 @@ python -m agent.tests.test_reflection
 - **Track:** Freestyle
 - **Kaggle:** [Link to competition](https://www.kaggle.com/competitions/vibecoding-agents-capstone-project)
 - **Portfolio Write-up:** Included in Kaggle submission form
+
 ---
 
 ## Status

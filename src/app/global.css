@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Define the new Tailwind v4 theme configurations inline */
+@theme {
+  --color-radio-bg: #0d0f12;
+  --color-valve-amber: #ff9f1c;
+  --font-mono: "JetBrains Mono", "SF Mono", monospace;
+}
+
+/* Base Body Styling */
+body {
+  background-color: #e5e5e5;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Hardware Scrollbar Layout */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0f12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d3a37;
+  border-radius: 3px;
+}

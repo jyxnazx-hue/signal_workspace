@@ -24,11 +24,6 @@ Signal acts as an **external continuity system**:
 
 ## Architecture
 
-The Mermaid diagram is failing because the code block isn't properly closed, and the "Tech Stack" text is bleeding into the diagram. To fix it, make sure there's a line with three backticks ```` ``` ```` **immediately after the last diagram line** and that there is a blank line before the next heading.
-
-Here's the corrected section of your `README.md` — replace the entire Mermaid block and the following text with this exact format:
-
-```markdown
 ```mermaid
 graph TD
     UI[Next.js Dark-Mode UI] -->|Text / Voice| ROUTER[Deterministic Router]

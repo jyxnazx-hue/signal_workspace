@@ -1,5 +1,4 @@
 
-```markdown
 # 📡 Signal – Your External Continuity System
 
 **Capstone project for Google’s Intensive Vibe Coding course on Kaggle.**
